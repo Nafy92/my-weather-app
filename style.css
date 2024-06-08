@@ -45,6 +45,7 @@ main {
   color: #272142;
   font-size: 38px;
   line-height: 48px;
+  font-weight: 900;
 }
 
 .weather-app-details {
