@@ -63,22 +63,25 @@ main {
 strong {
   font-weight: bold;
 }
+
+.weather-app-temperature-container {
+  display: flex;
+}
+
 .weather-app-temperature-icon {
-  position: relative;
-  top: -8px;
-  font-size: 40px;
-  margin-right: 10px;
+  font-size: 44px;
+  margin-top: 22px;
 }
 
 .weather-app-temperature-value {
-  font-size: 80px;
+  font-size: 88px;
   font-weight: bold;
+  margin-left: 10px;
 }
 
 .weather-app-temperature-unit {
-  font-size: 28px;
-  position: relative;
-  top: -38px;
+  font-size: 16px;
+  margin-top: 30px;
 }
 .body-app-data {
   display: flex;
