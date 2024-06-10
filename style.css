@@ -22,7 +22,6 @@ a {
   border-radius: 6px;
   width: 80%;
   padding: 15px 20px;
-  color: rgba(39, 33, 66, 0.4);
   font-size: 16px;
 }
 .search-form-button {
@@ -70,10 +69,8 @@ strong {
 }
 
 .weather-app-temperature-icon {
-  position: relative;
-  top: -8px;
-  font-size: 40px;
-  margin-right: 10px;
+  font-size: 44px;
+  margin-top: 22px;
 }
 
 .weather-app-temperature-value {
@@ -84,8 +81,7 @@ strong {
 
 .weather-app-temperature-unit {
   font-size: 28px;
-  position: relative;
-  top: -38px;
+  margin-top: 16px;
 }
 .body-app-data {
   display: flex;
