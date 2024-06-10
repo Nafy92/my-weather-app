@@ -1,3 +1,8 @@
+function searchCity(city) {
+  let apiKey = "208923ot246cf9a44e16fa303a8c757b";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+}
+
 function handleSearchSubmit(event) {
   event.preventDefault();
 
@@ -17,6 +22,7 @@ function handleSearchSubmit(event) {
   } else {
     console.error("Required elements are missing in the HTML.");
   }
+  searchCity(searchInput.value);
 }
 
 let searchFormElement = document.querySelector("#search-form");
