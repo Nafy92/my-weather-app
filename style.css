@@ -4,10 +4,11 @@ body {
 }
 
 a {
-  color: #f9f7fe;
+  color: blue;
 }
+
 .body-app {
-  color: white;
+  color: rgb(255, 255, 255);
   max-width: 600px;
   margin: 45px auto;
   padding: 30px;
@@ -19,17 +20,17 @@ a {
   background-color: #f9f7fe;
   border: none;
   border-radius: 6px;
-  width: 88%;
+  width: 80%;
   padding: 15px 20px;
   font-size: 16px;
 }
 .search-form-button {
   background: violet;
-  padding: 15px 20px;
+  padding: 15px 30px;
   border: none;
   border-radius: 6px;
   color: white;
-  margin-left: 10px;
+  margin-left: 5px;
   font-size: 16px;
 }
 header {
@@ -74,7 +75,7 @@ strong {
   font-weight: bold;
 }
 
-.weather-temperature-unit {
+.weather-app-temperature-unit {
   font-size: 28px;
   position: relative;
   top: -38px;
