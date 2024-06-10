@@ -70,8 +70,10 @@ strong {
 }
 
 .weather-app-temperature-icon {
-  font-size: 44px;
-  margin-top: 22px;
+  position: relative;
+  top: -8px;
+  font-size: 40px;
+  margin-right: 10px;
 }
 
 .weather-app-temperature-value {
@@ -82,7 +84,8 @@ strong {
 
 .weather-app-temperature-unit {
   font-size: 28px;
-  margin-top: 16px;
+  position: relative;
+  top: -38px;
 }
 .body-app-data {
   display: flex;
