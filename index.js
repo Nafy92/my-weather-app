@@ -26,7 +26,6 @@ function refreshWeather(response) {
 function handleError(error) {
   let cityElement = document.querySelector("#city");
   cityElement.innerHTML = "City not found. Please try again.";
-  console.error("Error fetching weather data:", error);
 }
 
 function formatDate(date) {
