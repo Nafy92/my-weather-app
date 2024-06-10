@@ -77,11 +77,13 @@ strong {
   font-size: 88px;
   font-weight: bold;
   margin-left: 10px;
+  color: black;
 }
 
 .weather-app-temperature-unit {
   font-size: 28px;
   margin-top: 16px;
+  color: black;
 }
 .body-app-data {
   display: flex;
