@@ -1,4 +1,6 @@
 function refreshWeather(response) {
+  console.log("weather data received:", response.data);
+
   let temperatureElement = document.querySelector("#temperature");
   let temperature = response.data.temperature.current;
   let cityElement = document.querySelector("#city");
@@ -10,7 +12,7 @@ function refreshWeather(response) {
   let iconElement = document.querySelector("#icon");
 
   iconElement.innerHTML = `<img
-      src="${response.data.condition.icon_url}"
+      src="${response.data.condition.icon_url}" alt="Weather icon"
       class="weather-app-temperature-icon"
     />
   `;
@@ -20,10 +22,10 @@ function refreshWeather(response) {
   descriptionElement.innerHTML = response.data.condition.description;
   windSpeedElement.innerHTML = `${response.data.wind.speed}km/h`;
   timeElement.innerHTML = formatDate(date);
-  console.log(response.data);
 }
 
 function handleError(error) {
+  console.error("Error fetching weather data:", error);
   let cityElement = document.querySelector("#city");
   cityElement.innerHTML = "City not found. Please try again.";
 }
@@ -51,6 +53,7 @@ function formatDate(date) {
 function searchCity(city) {
   let apiKey = "208923ot246cf9a44e16fa303a8c757b";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+   console.log("Fetching weather data from:", apiUrl);
   axios.get(apiUrl).then(refreshWeather).catch(handleError);
 }
 
@@ -60,26 +63,21 @@ function handleSearchSubmit(event) {
   console.log("Form submitted");
 
   let searchInput = document.querySelector("#search-form-input");
-  let cityElement = document.querySelector("#city");
-
-  if (searchInput && cityElement) {
+  if (searchInput) {
     let searchValue = searchInput.value.trim();
-    console.log("Search value:", searchValue);
-    if (searchValue) {
-      cityElement.innerHTML = searchValue;
+    if (searchValue){
+        searchCity(searchValue);
+    }else{
+        let cityElement=document.querySelector("#city")
+         cityElement.innerHTML = "Please enter a city name.";
     } else {
-      cityElement.innerHTML = "Please enter a city name.";
-    }
-  } else {
-    console.error("Required elements are missing in the HTML.");
+    console.error("Search input element is missing in the HTML.");
   }
-  searchCity(searchInput.value);
 }
 
 let searchFormElement = document.querySelector("#search-form");
 if (searchFormElement) {
   searchFormElement.addEventListener("submit", handleSearchSubmit);
-  console.log("Event listener added to form");
 } else {
   console.error("Search form element is missing in the HTML.");
 }
