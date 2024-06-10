@@ -7,6 +7,12 @@ function refreshWeather(response) {
   console.log(reponse.data);
 }
 
+function handleError(error) {
+  let cityElement = document.querySelector("#city");
+  cityElement.innerHTML = "City not found. Please try again.";
+  console.error("Error fetching weather data:", error);
+}
+
 function searchCity(city) {
   let apiKey = "208923ot246cf9a44e16fa303a8c757b";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
